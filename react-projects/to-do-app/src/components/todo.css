@@ -1,0 +1,173 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Body */
+body {
+    background: white;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* To-Do Container */
+.todo-container {
+    width: 100%;
+    max-width: 450px;
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+/* Title */
+.todo-title {
+    font-size: 26px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Input Container */
+.todo-input {
+    width: 75%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    background: #f9f9f9;
+    color: #333;
+    transition: 0.3s ease-in-out;
+    outline: none;
+}
+
+.todo-input:focus {
+    border-color: #007BFF;
+    background: white;
+}
+
+/* Add/Save Button */
+.add-btn {
+    width: 20%;
+    padding: 12px;
+    margin-left: 8px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 16px;
+    background: #007BFF;
+    color: white;
+    transition: 0.3s ease-in-out;
+}
+
+.add-btn:hover {
+    background: #0056b3;
+}
+
+/* To-Do List */
+.todo-list {
+    width: 100%;
+    margin-top: 15px;
+}
+
+/* Individual To-Do Item */
+.todo-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 12px;
+    background: #ffffff;
+    border-radius: 6px;
+    margin-top: 10px;
+    transition: 0.3s ease-in-out;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+/* Checkbox */
+.todo-checkbox {
+    margin-right: 10px;
+    cursor: pointer;
+    transform: scale(1.2);
+}
+
+/* To-Do Text */
+.todo-item span {
+    flex-grow: 1;
+    text-align: left;
+    font-size: 16px;
+    color: #333;
+}
+
+/* Buttons */
+.todo-buttons {
+    display: flex;
+    gap: 5px;
+}
+
+button {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 14px;
+    transition: 0.3s ease-in-out;
+}
+
+/* Edit Button */
+.edit-btn {
+    background: #ffc107;
+    color: black;
+}
+
+.edit-btn:hover {
+    background: #e0a800;
+}
+
+/* Delete Button */
+.delete-btn {
+    background: #dc3545;
+    color: white;
+}
+
+.delete-btn:hover {
+    background: #c82333;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .todo-container {
+        width: 90%;
+    }
+
+    .todo-buttons {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    button {
+        width: 100%;
+    }
+
+    .add-btn {
+        width: 100%;
+        margin-left: 0;
+        margin-top: 10px;
+    }
+
+    .todo-input {
+        width: 100%;
+    }
+}
