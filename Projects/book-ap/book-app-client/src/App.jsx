@@ -1,5 +1,6 @@
 import Book from "./components/Book";
 import Category from "./components/Catrgory";
+import CompOne from "./components/CompOne";
 
 function App() {
   let books = [
@@ -47,6 +48,8 @@ function App() {
       {books.map((cat) => (
         <Category cat_details={cat} />
       ))}
+
+
     </>
   );
 }

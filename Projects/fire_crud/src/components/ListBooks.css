@@ -100,6 +100,7 @@
     font-size: 14px;
     transition: all 0.3s ease;
     background-color: #f9f9f9;
+    color : black;
   }
   
   .form-group input:focus,

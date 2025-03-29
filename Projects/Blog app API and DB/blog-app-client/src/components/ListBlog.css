@@ -1,0 +1,42 @@
+.blog-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+  }
+  
+  .blog-table thead {
+    background-color: #f8f9fa;
+  }
+  
+  .blog-table th, .blog-table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #e0e0e0;
+  }
+  
+  .blog-table th {
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #495057;
+    font-size: 0.9rem;
+  }
+  
+  .blog-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+  .blog-table tr:hover {
+    background-color: #e9ecef;
+    transition: background-color 0.3s ease;
+  }
+  
+  .blog-table td {
+    color: #212529;
+  }
+  
+  .blog-table-container {
+    overflow-x: auto;
+    border-radius: 8px;
+  }
