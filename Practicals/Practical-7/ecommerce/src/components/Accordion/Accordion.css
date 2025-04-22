@@ -1,0 +1,70 @@
+/* Black Color Scheme Accordion */
+.accordion {
+  max-width: 800px;
+  margin: 0 auto;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.accordion-item {
+  border: 1px solid #333;
+  margin-bottom: 10px;
+  border-radius: 4px;
+  overflow: hidden;
+  background-color: #000;
+  color: #fff;
+}
+
+.accordion-item.open {
+  border-color: #555;
+}
+
+.accordion-question {
+  width: 100%;
+  padding: 15px 20px;
+  text-align: left;
+  background: #111;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+  transition: background 0.3s ease;
+}
+
+.accordion-item.open .accordion-question {
+  background: #222;
+  color: #fff;
+}
+
+.accordion-question:hover {
+  background: #333;
+}
+
+.accordion-icon {
+  font-size: 20px;
+  color: #fff;
+}
+
+.accordion-answer {
+  padding: 20px;
+  background: #111;
+  color: #eee;
+  line-height: 1.6;
+  border-top: 1px solid #333;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Dark mode compatibility */
+@media (prefers-color-scheme: dark) {
+  .accordion-item {
+    border-color: #444;
+  }
+}

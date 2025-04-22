@@ -4,7 +4,7 @@ const staff = require("./src/routes/staff.routes");
 const student = require("./src/routes/student.routes");
 const course = require("./src/routes/course.routes");
 const app = express();
-const port = 3001;
+const port = 3000;
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(errors.errorHandler);

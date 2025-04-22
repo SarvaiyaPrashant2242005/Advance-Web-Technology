@@ -1,0 +1,176 @@
+/* Bill.css - Specific styles for the Bill component */
+
+.bill-container {
+    transition: all 0.3s ease;
+    background-color: #fff;
+    position: relative;
+    color: black;
+  }
+  
+  .bill-container:after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background: linear-gradient(135deg, transparent 33.33%, #fff 33.33%, #fff 66.66%, transparent 66.66%);
+    background-size: 10px 100%;
+    background-repeat: repeat-x;
+  }
+  
+  .bill-header {
+    border-bottom: 1px dashed #e0e0e0;
+    padding-bottom: 0.75rem;
+    margin-bottom: 0.75rem;
+  }
+  
+  .bill-logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 0.5rem;
+  }
+  
+  .bill-thank-you {
+    font-style: italic;
+    text-align: center;
+    color: #666;
+  }
+  
+  .bill-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+  }
+  
+  .bill-table-header {
+    border-bottom: 1px solid #e0e0e0;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    color: #666;
+  }
+  
+  .bill-table-header th {
+    padding: 0.5rem;
+    text-align: left;
+  }
+  
+  .bill-table-header th:last-child {
+    text-align: right;
+  }
+  
+  .bill-table-row {
+    border-bottom: 1px dotted #e0e0e0;
+  }
+  
+  .bill-table-row:last-child {
+    border-bottom: none;
+  }
+  
+  .bill-table-row td {
+    padding: 0.5rem;
+  }
+  
+  .bill-table-row td:last-child {
+    text-align: right;
+  }
+  
+  .bill-total {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px dashed #e0e0e0;
+    text-align: right;
+    font-weight: bold;
+    font-size: 1.1rem;
+  }
+  
+  .bill-footer {
+    margin-top: 1.5rem;
+    text-align: center;
+    font-size: 0.75rem;
+    color: #999;
+    border-top: 1px dashed #e0e0e0;
+    padding-top: 1rem;
+  }
+  
+  .bill-timestamp {
+    font-size: 0.7rem;
+    color: #999;
+    margin-top: 0.5rem;
+  }
+  
+  .bill-confirm-button {
+    background-color: #2c9e3f;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 0.75rem 1.5rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    margin-top: 1rem;
+  }
+  
+  .bill-confirm-button:hover {
+    background-color: #238c34;
+    transform: translateY(-2px);
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+  }
+  
+  .bill-confirm-button:active {
+    transform: translateY(0);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+  }
+  
+  .bill-empty {
+    text-align: center;
+    color: #999;
+    font-style: italic;
+    padding: 2rem 0;
+  }
+  
+  /* Print styling */
+  @media print {
+    .bill-container {
+      box-shadow: none !important;
+      border: none !important;
+      padding: 0 !important;
+    }
+    
+    .bill-confirm-button {
+      display: none !important;
+    }
+    
+    body {
+      font-family: 'Courier New', monospace !important;
+    }
+  }
+  
+  /* Paper texture effect */
+  .receipt-paper {
+    background-color: #fff;
+    background-image: 
+      linear-gradient(90deg, rgba(200,200,200,.07) 50%, transparent 50%),
+      linear-gradient(90deg, rgba(200,200,200,.13) 50%, transparent 50%),
+      linear-gradient(90deg, transparent 50%, rgba(200,200,200,.17) 50%),
+      linear-gradient(90deg, transparent 50%, rgba(200,200,200,.19) 50%);
+    background-size: 13px, 29px, 37px, 53px;
+  }
+  
+  /* Animation for printing effect */
+  @keyframes print-receipt {
+    from {
+      max-height: 0;
+      opacity: 0;
+    }
+    to {
+      max-height: 2000px;
+      opacity: 1;
+    }
+  }
+  
+  .print-animation {
+    animation: print-receipt 1s ease-out forwards;
+    overflow: hidden;
+  }

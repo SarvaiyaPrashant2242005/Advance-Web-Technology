@@ -1,0 +1,181 @@
+/* ItemList.css - Specific styles for the ItemList component */
+
+.items-container {
+    margin-bottom: 2rem;
+  }
+  
+  .items-heading {
+    position: relative;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+  }
+  
+  .items-heading:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 3px;
+    background-color: #3b82f6;
+    border-radius: 2px;
+  }
+  
+  .items-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 1rem;
+  }
+  
+  .item-card {
+    border: 1px solid #e5e7eb;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    background-color: #f9fafb;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .item-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    border-color: #d1d5db;
+  }
+  
+  .item-card:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(to right, #3b82f6, #2563eb);
+    transform: scaleX(0);
+    transform-origin: 0 0;
+    transition: transform 0.3s ease;
+  }
+  
+  .item-card:hover:before {
+    transform: scaleX(1);
+  }
+  
+  .item-name {
+    font-weight: 600;
+    color: #1f2937;
+    margin-bottom: 0.25rem;
+    font-size: 1rem;
+    line-height: 1.2;
+  }
+  
+  .item-price {
+    color: #6b7280;
+    font-size: 0.925rem;
+    margin-bottom: 0.75rem;
+  }
+  
+  .item-price:before {
+    content: '₹';
+    margin-right: 0.125rem;
+  }
+  
+  .item-add-button {
+    margin-top: auto;
+    background-color: #3b82f6;
+    color: white;
+    border: none;
+    border-radius: 0.25rem;
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .item-add-button:hover {
+    background-color: #2563eb;
+  }
+  
+  .item-add-button:active {
+    transform: scale(0.98);
+  }
+  
+  .item-add-button:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.5);
+  }
+  
+  .item-add-button span {
+    margin-right: 0.25rem;
+  }
+  
+  /* Empty state styling */
+  .empty-items {
+    text-align: center;
+    padding: 2rem;
+    color: #6b7280;
+    font-style: italic;
+    background-color: #f9fafb;
+    border: 1px dashed #d1d5db;
+    border-radius: 0.5rem;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 640px) {
+    .items-grid {
+      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    }
+    
+    .item-name {
+      font-size: 0.875rem;
+    }
+    
+    .item-price {
+      font-size: 0.8125rem;
+    }
+  }
+  
+  /* Item card hover effect */
+  @keyframes pulse {
+    0% {
+      box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.4);
+    }
+    70% {
+      box-shadow: 0 0 0 10px rgba(59, 130, 246, 0);
+    }
+    100% {
+      box-shadow: 0 0 0 0 rgba(59, 130, 246, 0);
+    }
+  }
+  
+  .item-card.added {
+    animation: pulse 1s;
+  }
+  
+  /* Stock indicator */
+  .stock-indicator {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    width: 0.75rem;
+    height: 0.75rem;
+    border-radius: 50%;
+  }
+  
+  .in-stock {
+    background-color: #10b981;
+  }
+  
+  .low-stock {
+    background-color: #f59e0b;
+  }
+  
+  .out-of-stock {
+    background-color: #ef4444;
+  }

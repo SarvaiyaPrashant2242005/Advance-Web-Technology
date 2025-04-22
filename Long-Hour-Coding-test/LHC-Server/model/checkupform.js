@@ -41,10 +41,7 @@ const Checkup = sequelize.define('Checkup', {
     type: DataTypes.TEXT,
     allowNull: false
   }
-  
-  
- 
-  
+
 }, {
   tableName: 'checkups',
   timestamps: false

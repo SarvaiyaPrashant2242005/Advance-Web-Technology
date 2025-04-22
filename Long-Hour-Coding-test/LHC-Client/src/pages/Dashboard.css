@@ -1,15 +1,210 @@
+/* Dashboard.css */
+
+/* General Styling */
+.container {
+  max-width: 95%;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h2 {
+  color: #2c3e50;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+h2::after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 3px;
+  background: #3498db;
+  margin: 10px auto 0;
+}
+
+/* Search Input */
+.form-control {
+  border-radius: 20px;
+  padding: 10px 20px;
+  border: 1px solid #ddd;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.form-control:focus {
+  border-color: #3498db;
+  box-shadow: 0 2px 10px rgba(52, 152, 219, 0.3);
+}
+
+/* Table Styling */
+.table-responsive {
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+}
+
+.table {
+  margin-bottom: 0;
+}
+
 .table thead th {
-    vertical-align: middle;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 15px;
+  vertical-align: middle;
+  background-color: #3498db;
+  color: white;
+  border: none;
+}
+
+.table tbody tr {
+  transition: all 0.2s ease;
+}
+
+.table tbody tr:hover {
+  background-color: #f8f9fa;
+  transform: translateY(-2px);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.table td {
+  padding: 12px 15px;
+  vertical-align: middle;
+  border-top: 1px solid #dee2e6;
+}
+
+/* Button Styling */
+.btn {
+  border-radius: 20px;
+  padding: 8px 15px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+  border: none;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.btn-success {
+  background-color: #2ecc71;
+}
+
+.btn-success:hover {
+  background-color: #27ae60;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(46, 204, 113, 0.3);
+}
+
+.btn-primary {
+  background-color: #3498db;
+}
+
+.btn-primary:hover {
+  background-color: #2980b9;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(52, 152, 219, 0.3);
+}
+
+.btn-sm {
+  padding: 6px 12px;
+  font-size: 0.875rem;
+}
+
+/* Action Buttons Container */
+.d-flex.flex-column.gap-2 {
+  gap: 10px;
+}
+
+/* No Patients Found Message */
+.text-muted {
+  color: #7f8c8d !important;
+  font-style: italic;
+  padding: 20px;
+}
+
+/* Form Container Styling */
+.form-container {
+  background: white;
+  border-radius: 10px;
+  padding: 25px;
+  margin-top: 20px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .table-responsive {
+    border-radius: 0;
+    box-shadow: none;
   }
   
-  .table-hover tbody tr:hover {
-    background-color: #f9f9f9;
-    transition: background-color 0.3s;
+  .table thead {
+    display: none;
   }
   
-  .btn-success.btn-sm {
-    padding: 4px 10px;
-    font-size: 0.85rem;
-    border-radius: 4px;
+  .table, .table tbody, .table tr, .table td {
+    display: block;
+    width: 100%;
   }
   
+  .table tr {
+    margin-bottom: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  
+  .table td {
+    text-align: right;
+    padding-left: 50%;
+    position: relative;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .table td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 15px;
+    width: calc(50% - 15px);
+    padding-right: 15px;
+    font-weight: bold;
+    text-align: left;
+    color: #2c3e50;
+  }
+  
+  .table td:last-child {
+    border-bottom: 0;
+  }
+  
+  .d-flex.flex-column.gap-2 {
+    flex-direction: row !important;
+    justify-content: center;
+    gap: 10px;
+  }
+}
+
+/* Animation for table rows */
+@keyframes fadeInRow {
+  from { opacity: 0; transform: translateX(-20px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+.table tbody tr {
+  animation: fadeInRow 0.5s ease forwards;
+}
+
+.table tbody tr:nth-child(1) { animation-delay: 0.1s; }
+.table tbody tr:nth-child(2) { animation-delay: 0.2s; }
+.table tbody tr:nth-child(3) { animation-delay: 0.3s; }
+.table tbody tr:nth-child(4) { animation-delay: 0.4s; }
+/* Add more if needed */

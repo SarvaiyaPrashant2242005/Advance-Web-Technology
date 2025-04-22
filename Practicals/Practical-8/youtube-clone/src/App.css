@@ -1,0 +1,19 @@
+/* Custom styles for the video player */
+.video-player-container {
+  background-color: #000;
+  color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.controls {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.MuiSlider-root {
+  color: #fff !important;
+}
+
+.MuiIconButton-root {
+  color: #fff !important;
+}
